@@ -33,6 +33,7 @@ private:
     Player m_currentPlayer = Player1;
 
     QPushButton *m_buttons[3][3];
+    int playerWin=0;
 
     static QIcon xIcon();
     static QIcon oIcon();

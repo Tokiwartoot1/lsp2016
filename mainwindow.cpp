@@ -96,7 +96,10 @@ void MainWindow::setMark(QPushButton *btn, MainWindow::Mark m)
 
 void MainWindow::playerMove()
 {
+
     QPushButton* btn = qobject_cast<QPushButton*>(sender());
+    if (playerWin)
+        return;
     if (!btn)
         return;
 
@@ -110,28 +113,36 @@ void MainWindow::playerMove()
          m_currentPlayer = Player2;
          if (mark(0,0)==X && mark(1,1)==X && mark(2,2)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(0,0)==X && mark(0,1)==X && mark(0,2)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(1,0)==X && mark(1,1)==X && mark(1,2)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(2,0)==X && mark(2,1)==X && mark(2,2)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(0,0)==X && mark(1,0)==X && mark(2,0)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(0,1)==X && mark(1,1)==X && mark(2,1)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(0,2)==X && mark(1,2)==X && mark(2,2)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
          if (mark(2,0)==X && mark(1,1)==X && mark(0,2)==X)
          { ui->pushButton_10->setIcon(QIcon(":resource/6.png"));
-          ui->pushButton_10->setIconSize(QSize(211,51)); }
+          ui->pushButton_10->setIconSize(QSize(211,51));
+         playerWin=1;}
 
         return;
     case Player2:
@@ -139,28 +150,36 @@ void MainWindow::playerMove()
         btn->setIconSize(QSize(70,70));
         if (mark(0,0)==O && mark(1,1)==O && mark(2,2)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(0,0)==O && mark(0,1)==O && mark(0,2)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(1,0)==O && mark(1,1)==O && mark(1,2)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(2,0)==O && mark(2,1)==O && mark(2,2)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(0,0)==O && mark(1,0)==O && mark(2,0)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(0,1)==O && mark(1,1)==O && mark(2,1)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(0,2)==O && mark(1,2)==O && mark(2,2)==O)
         { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-         ui->pushButton_10->setIconSize(QSize(211,51)); }
+         ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
         if (mark(2,0)==O && mark(1,1)==O && mark(0,2)==O)
            { ui->pushButton_10->setIcon(QIcon(":resource/7.png"));
-            ui->pushButton_10->setIconSize(QSize(211,51)); }
+            ui->pushButton_10->setIconSize(QSize(211,51));
+        playerWin=1;}
 
 
         m_currentPlayer = Player1;
