@@ -41,6 +41,7 @@ private:
 
 private slots:
     void playerMove();
+    void on_pushButton_11_clicked(bool checked);
 };
 
 #endif // MAINWINDOW_H

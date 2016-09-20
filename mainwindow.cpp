@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QIcon>
+#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -41,6 +42,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->pushButton_9->setIconSize(QSize(67,67));
     ui->pushButton_10->setIcon(QIcon(":resource/8.png"));
     ui->pushButton_10->setIconSize(QSize(211,51));
+    ui->pushButton_11->setIcon(QIcon(":resource/9.png"));
+    ui->pushButton_11->setIconSize(QSize(207,47));
 
     QPushButton *buttons[3][3] = {
         {ui->pushButton,   ui->pushButton_2, ui->pushButton_3},
@@ -209,4 +212,10 @@ QIcon MainWindow::nothingIcon()
     static QIcon icon;
 
     return icon;
+}
+
+void MainWindow::on_pushButton_11_clicked(bool checked)
+{
+    qApp->quit();
+    QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
 }
